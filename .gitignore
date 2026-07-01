@@ -3,6 +3,12 @@
 # dependencies
 node_modules/
 
+# editor / agent tooling (private, not part of the product repo)
+.claude/
+.vscode/
+AGENTS.md
+CLAUDE.md
+
 # Expo
 .expo/
 dist/
