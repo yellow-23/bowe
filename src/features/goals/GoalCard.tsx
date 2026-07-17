@@ -3,7 +3,7 @@ import * as Haptics from 'expo-haptics';
 import { router } from 'expo-router';
 import { Text, TouchableOpacity, View } from 'react-native';
 
-import { Avatar, firstName } from '@/shared/components/Avatar';
+import { firstName } from '@/shared/components/Avatar';
 import { ProgressBar } from '@/shared/components/ProgressBar';
 import { colors } from '@/shared/theme/colors';
 
@@ -55,7 +55,7 @@ export function GoalCard({ goal }: { goal: Goal }) {
       activeOpacity={0.85}
       onPress={() => {
         Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-        router.push(`/goal/${goal.id}` as never); // route pending
+        router.push(`/goal/${goal.id}` as never);
       }}
       className="rounded-3xl border bg-white p-[18px]"
       style={{
@@ -87,17 +87,13 @@ export function GoalCard({ goal }: { goal: Goal }) {
 
       <Text className="mt-[11px] text-[13px] font-semibold text-muted">{goal.sub}</Text>
       <View className="mt-2.5">
-        <ProgressBar pct={goal.progress} color={color} />
+        <ProgressBar pct={goal.progress} color={color} faces={faces} />
       </View>
 
-      <View className="mt-3 flex-row items-center justify-between">
-        <View className="flex-row items-center">
-          {faces.map((name, i) => (
-            <View key={name} style={{ marginLeft: i === 0 ? 0 : -7 }}>
-              <Avatar name={name} size={26} borderColor="#fff" />
-            </View>
-          ))}
-          <Text className="ml-[11px] text-xs font-bold text-muted">{facesLabel}</Text>
+      <View className="mt-2.5 flex-row items-center justify-between">
+        <View className="flex-row items-center gap-1.5">
+          <Ionicons name="eye" size={13} color={colors.faint} />
+          <Text className="text-xs font-bold text-muted">{facesLabel}</Text>
         </View>
         <Text className="text-sm font-extrabold" style={{ color }}>
           {Math.round(goal.progress * 100)}%

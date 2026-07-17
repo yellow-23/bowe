@@ -29,7 +29,7 @@ export function MetasScreen() {
           activeOpacity={0.85}
           onPress={() => {
             Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-            router.push(`/goal/${riskGoal.id}` as never); // route pending
+            router.push(`/goal/${riskGoal.id}` as never);
           }}
           className="mx-[18px] mb-1 mt-4 flex-row items-center gap-[13px] rounded-[22px] border-[1.5px] bg-coral-bg p-[15px]"
           style={{ borderColor: colors.coralBorder }}>

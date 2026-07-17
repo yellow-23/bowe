@@ -33,7 +33,7 @@ export function BottomBar() {
           activeOpacity={0.85}
           onPress={() => {
             Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-            router.push('/crear' as never); // route pending, see task #5
+            router.push('/crear' as never);
           }}
           className="-mt-3.5 h-[58px] w-[58px] items-center justify-center rounded-[20px] bg-violet"
           style={{ shadowColor: colors.violet, shadowOffset: { width: 0, height: 10 }, shadowOpacity: 0.4, shadowRadius: 22, elevation: 6 }}>

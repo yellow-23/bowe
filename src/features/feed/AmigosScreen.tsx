@@ -61,7 +61,7 @@ export function AmigosScreen() {
                   activeOpacity={0.85}
                   onPress={() => {
                     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-                    router.push('/rescate' as never); // route pending
+                    router.push('/rescate' as never);
                   }}
                   className="mt-[11px] h-[46px] items-center justify-center rounded-2xl bg-coral">
                   <Text className="text-[15px] font-extrabold text-white">Rescatar a Mateo</Text>

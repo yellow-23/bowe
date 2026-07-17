@@ -31,9 +31,19 @@ module.exports = {
         blue: '#5B8DEF',
       },
       fontFamily: {
-        sans: ['Nunito', 'system-ui', 'sans-serif'],
+        sans: ['Nunito_600SemiBold', 'system-ui', 'sans-serif'],
       },
     },
   },
-  plugins: [],
+  plugins: [
+    // RN needs the exact font file per weight; re-declare the weight utilities
+    // so every existing font-semibold/bold/extrabold picks up Nunito for free.
+    require('tailwindcss/plugin')(({ addUtilities }) => {
+      addUtilities({
+        '.font-semibold': { fontFamily: 'Nunito_600SemiBold' },
+        '.font-bold': { fontFamily: 'Nunito_700Bold' },
+        '.font-extrabold': { fontFamily: 'Nunito_800ExtraBold' },
+      });
+    }),
+  ],
 };
